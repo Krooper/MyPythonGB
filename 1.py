@@ -60,5 +60,34 @@ def quarter():
             quarter_find(num_x, num_y)
 
 
+def quarter_numbers():
+    def is_number(number):
+        if number.isdigit():
+            return True
+        else:
+            print("Неправильный ввод!")
+            return False
+
+    def in_range(number):
+        if 1 <= number <= 4:
+            return True
+        else:
+            print("Нет такой четверти на плоскости!")
+
+    quarter_inp = input()
+    if is_number(quarter_inp):
+        quarter_num = int(quarter_inp)
+        if in_range(quarter_num):
+            if quarter_num == 1:
+                print("X = [1;+inf], Y = [1;+inf]")
+            elif quarter_num == 2:
+                print("X = [-inf1;-1], Y = [1;+inf]")
+            elif quarter_num == 3:
+                print("X = [-inf1;-1], Y = [-inf1;-1]")
+            else:
+                print("X = [1;+inf], Y = [-inf1;-1]")
+
+
 day_of_week()
 quarter()
+quarter_numbers()
