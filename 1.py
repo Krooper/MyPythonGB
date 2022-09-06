@@ -25,6 +25,20 @@ def day_of_week():
             day_off(week_day)
 
 
+def expression_check():
+    print("X \tY \tZ \tnot(x or y or z) \tnot x and not y and not z \tFUNC")
+    print("-- \t-- \t-- \t\t-- \t\t\t-- \t\t\t--")
+    for x in True, False:
+        for y in True, False:
+            for z in True, False:
+                first_half = not(x or y or z)
+                second_half = not x and not y and not z
+                if first_half == second_half:
+                    print(f"{x} \t{y} \t{z} \t\t{first_half} \t\t\t{second_half} \t\t\tTrue")
+                else:
+                    print(f"{x} \t{y} \t{z} \t\t{first_half} \t\t\t{second_half} \t\t\tFalse")
+
+
 def quarter():
     def is_number(number):
         try:
@@ -114,6 +128,7 @@ def distance():
 
 
 day_of_week()
+expression_check()
 quarter()
 quarter_numbers()
 distance()
