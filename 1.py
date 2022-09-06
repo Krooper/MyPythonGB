@@ -88,6 +88,32 @@ def quarter_numbers():
                 print("X = [1;+inf], Y = [-inf1;-1]")
 
 
+def distance():
+    def is_number(number):
+        try:
+            float(number)
+            return True
+        except ValueError:
+            print("Вы ввели не число!")
+            return False
+
+    def distance_find(x1, x2, y1, y2):
+        return round(((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5, 4)
+
+    x1 = input()
+    x2 = input()
+    y1 = input()
+    y2 = input()
+
+    if is_number(x1) and is_number(x2) and is_number(y1) and is_number(y2):
+        x1_num = int(x1)
+        x2_num = int(x2)
+        y1_num = int(y1)
+        y2_num = int(y2)
+        print(f"Расстояние между точками равно {distance_find(x1_num, x2_num, y1_num, y2_num)}")
+
+
 day_of_week()
 quarter()
 quarter_numbers()
+distance()
