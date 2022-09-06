@@ -1,16 +1,38 @@
-# This is a sample Python script.
+# Напишите программу, которая принимает на вход цифру, обозначающую день недели,
+# и проверяет, является ли этот день выходным.
+# Пример:
+# - 6 -> да
+# - 7 -> да
+# - 1 -> нет
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def is_number (number):
+    if number.isdigit():
+        return True
+    else:
+        print("Неправильный ввод!")
+        return False
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def in_range (number):
+    if 1 <= number <= 7:
+        return True
+    else:
+        print("Нет такого дня недели!")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def day_off (number):
+    if 6 <= number <= 7:
+        print("Да")
+    else:
+        print("Нет")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+input_number = input()
+if is_number(input_number):
+    week_day = int(input_number)
+    if in_range(week_day):
+        day_off(week_day)
+
+
+
+
