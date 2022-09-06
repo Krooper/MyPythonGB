@@ -21,8 +21,8 @@ def day_of_week():
     input_number = input()
     if is_number(input_number):
         week_day = int(input_number)
-    if in_range(week_day):
-        day_off(week_day)
+        if in_range(week_day):
+            day_off(week_day)
 
 
 def quarter():
