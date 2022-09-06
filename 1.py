@@ -4,7 +4,7 @@
 # - 6 -> да
 # - 7 -> да
 # - 1 -> нет
-def day_of_week:
+def day_of_week():
     def is_number (number):
         if number.isdigit():
             return True
@@ -32,6 +32,7 @@ def day_of_week:
         week_day = int(input_number)
         if in_range(week_day):
             day_off(week_day)
+
 
 day_of_week()
 
