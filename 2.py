@@ -9,6 +9,7 @@ def digits_sum():
 
     def positive(number):
         if number[0] == '-':
+            print("Отрицательное число преобразовано в положительное.")
             return number[1:]
         else:
             return number
@@ -45,6 +46,7 @@ def factorial_list():
 
     def positive(number):
         if number[0] == '-':
+            print("Отрицательное число преобразовано в положительное.")
             return number[1:]
         else:
             return number
@@ -75,5 +77,51 @@ def factorial_list():
             print(f"Набор произведений: {factorial(number)}")
 
 
-digits_sum()
-factorial_list()
+def number_palindrome():
+    def is_number(number):
+        try:
+            float(number)
+            return True
+        except ValueError:
+            print("Вы ввели не число!")
+            return False
+
+    def positive(number):
+        if number[0] == '-':
+            print("Отрицательное число преобразовано в положительное.")
+            return number[1:]
+        else:
+            return number
+
+    def is_integer(number):
+        if number.isdigit():
+            return True
+        else:
+            print("Вы ввели дробное число!")
+            return False
+
+    def get_palindrome(number):
+        reversed_number = []
+        iterator = 0
+        for _ in range(len(number)):
+            reversed_number.append(number[iterator-1])
+            iterator -= 1
+        return ''.join(reversed_number)
+
+    def palindrome_check(number, reversed_number):
+        while number != reversed_number:
+            number = str(int(number) + int(reversed_number))
+            reversed_number = get_palindrome(number)
+        return number
+
+    print("Введите целое число:")
+    number = input()
+    if is_number(number):
+        number = positive(number)
+        if is_integer(number):
+            print(f"Найден палиндром: {palindrome_check(number, get_palindrome(number))}")
+
+
+# digits_sum()
+# factorial_list()
+number_palindrome()
