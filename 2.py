@@ -33,6 +33,7 @@ def digits_sum():
         if is_integer(number):
             print(f"Сумма цифр введенного числа: {sum_of_digits(number)}")
 
+
 def factorial_list():
     def is_number(number):
         try:
@@ -56,7 +57,7 @@ def factorial_list():
             return False
 
     def factorial(number):
-        fact_list = list()
+        fact_list = []
         for i in range(int(number)+1):
             if i == 0:
                 continue
@@ -73,5 +74,6 @@ def factorial_list():
         if is_integer(number):
             print(f"Набор произведений: {factorial(number)}")
 
-#digits_sum()
+
+digits_sum()
 factorial_list()
