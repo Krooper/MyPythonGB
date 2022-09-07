@@ -1,3 +1,6 @@
+import datetime
+
+
 def digits_sum():
     def is_number(number):
         try:
@@ -122,6 +125,41 @@ def number_palindrome():
             print(f"Найден палиндром: {palindrome_check(number, get_palindrome(number))}")
 
 
-# digits_sum()
-# factorial_list()
+def random_number():
+    def is_number(number):
+        try:
+            float(number)
+            return True
+        except ValueError:
+            print("Вы ввели не число!")
+            return False
+
+    def positive(number):
+        if number[0] == '-':
+            print("Отрицательное число преобразовано в положительное.")
+            return number[1:]
+        else:
+            return number
+
+    def is_integer(number):
+        if number.isdigit():
+            return True
+        else:
+            print("Вы ввели дробное число!")
+            return False
+
+    print("Введите верхнюю границу диапазона (целое число):")
+    number = input()
+    if is_number(number):
+        number = positive(number)
+        if is_integer(number):
+            random_num = int(round(datetime.datetime.now().microsecond))
+            while random_num > int(number):
+                random_num /= 10
+            print(f"Случайное число: {int(random_num)}")
+
+
+digits_sum()
+factorial_list()
 number_palindrome()
+random_number()
