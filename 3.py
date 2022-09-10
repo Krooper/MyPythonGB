@@ -61,7 +61,7 @@ def pair_multiplication():
         i = 0
         j = len(numbers) - 1
         while i <= j:
-            multi_list.append(numbers[i]*numbers[j])
+            multi_list.append(round(numbers[i]*numbers[j], 2))
             i += 1
             j -= 1
         return multi_list
