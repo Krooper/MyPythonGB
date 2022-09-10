@@ -62,5 +62,23 @@ def pair_multiplication():
     print(f"Произведение пар: {multi(numbers_list)}")
 
 
+def fractional_diff():
+    def fract_min_max(numbers):
+        min_fract = numbers[0] - int(numbers[0])
+        max_fract = 0
+        for i in range(len(numbers)):
+            fract_part = numbers[i] - int(numbers[i])
+            if fract_part < min_fract:
+                min_fract = fract_part
+            if fract_part > max_fract:
+                max_fract = fract_part
+        return max_fract - min_fract
+
+    numbers_list = list_input()
+    print(f"Получившийся массив: {numbers_list}")
+    print(f"Наибольшая разница дробных частей: {round(fract_min_max(numbers_list), 2)}")
+
+
 # odd_num_sum()
-pair_multiplication()
+# pair_multiplication()
+fractional_diff()
