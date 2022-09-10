@@ -49,6 +49,7 @@ def odd_num_sum():
             i += 2
         return num_sum
 
+    print("Задача 1.")
     numbers_list = list_input()
     print(f"Получившийся массив: {numbers_list}")
     print(f"Сумма нечетных элементов: {odd_sum(numbers_list)}")
@@ -65,6 +66,7 @@ def pair_multiplication():
             j -= 1
         return multi_list
 
+    print("Задача 2.")
     numbers_list = list_input()
     print(f"Получившийся массив: {numbers_list}")
     print(f"Произведение пар: {multi(numbers_list)}")
@@ -82,6 +84,7 @@ def fractional_diff():
                 max_fract = fract_part
         return max_fract - min_fract
 
+    print("Задача 3.")
     numbers_list = list_input()
     print(f"Получившийся массив: {numbers_list}")
     print(f"Наибольшая разница дробных частей: {round(fract_min_max(numbers_list), 2)}")
@@ -96,6 +99,7 @@ def binarizator():
             decimal_number = decimal_number // 2
         return binary_number
 
+    print("Задача 4.")
     print("Введите целое число:")
     number = input()
     if is_number(number):
@@ -133,6 +137,7 @@ def fibonacci_printer():
             fib_list.append(positive_fib_list[i])
         return fib_list
 
+    print("Задача 5.")
     print("Введите номер элемента ряда Фибоначчи:")
     number = input()
     if is_number(number):
@@ -141,8 +146,8 @@ def fibonacci_printer():
             print(f"Ряд Фибоначчи: {fibonacci_list(number)}")
 
 
-# odd_num_sum()
-# pair_multiplication()
-# fractional_diff()
-# binarizator()
+odd_num_sum()
+pair_multiplication()
+fractional_diff()
+binarizator()
 fibonacci_printer()
