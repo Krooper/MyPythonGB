@@ -15,6 +15,14 @@ def is_integer(number):
         return False
 
 
+def positive(number):
+    if number[0] == '-':
+        print("Отрицательное число преобразовано в положительное.")
+        return number[1:]
+    else:
+        return number
+
+
 def list_input():
     num_list = []
     print("Введите длину массива")
@@ -79,6 +87,62 @@ def fractional_diff():
     print(f"Наибольшая разница дробных частей: {round(fract_min_max(numbers_list), 2)}")
 
 
+def binarizator():
+    def dec_to_bin(decimal_number):
+        decimal_number = int(decimal_number)
+        binary_number = ''
+        while decimal_number > 0:
+            binary_number = str(decimal_number % 2) + binary_number
+            decimal_number = decimal_number // 2
+        return binary_number
+
+    print("Введите целое число:")
+    number = input()
+    if is_number(number):
+        number = positive(number)
+        if is_integer(number):
+            print(f"Ваше число: {number}")
+            print(f"Ваше число в двоичной системе счисления: {dec_to_bin(number)}")
+
+
+def fibonacci_printer():
+    def fibonacci_list(number):
+        number = int(number)
+        positive_fib_list = []
+        fib1 = fib2 = 1
+        positive_fib_list.append(fib1)
+        positive_fib_list.append(fib2)
+        for i in range(2, number):
+            fib1, fib2 = fib2, fib1 + fib2
+            positive_fib_list.append(fib2)
+
+        negative_fib_list = []
+        for i in range(len(positive_fib_list)):
+            if i % 2 == 0:
+                negative_fib_list.append(positive_fib_list[i])
+            else:
+                negative_fib_list.append(-positive_fib_list[i])
+
+        fib_list = []
+        i = len(negative_fib_list) - 1
+        while i >= 0:
+            fib_list.append(negative_fib_list[i])
+            i -= 1
+        fib_list.append(0)
+        for i in range(len(positive_fib_list)):
+            fib_list.append(positive_fib_list[i])
+        return fib_list
+
+    print("Введите номер элемента ряда Фибоначчи:")
+    number = input()
+    if is_number(number):
+        number = positive(number)
+        if is_integer(number):
+            print(f"Ряд Фибоначчи: {fibonacci_list(number)}")
+
+
 # odd_num_sum()
 # pair_multiplication()
-fractional_diff()
+# fractional_diff()
+# binarizator()
+fibonacci_printer()
