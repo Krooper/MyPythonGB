@@ -44,6 +44,7 @@ def file_writer(file, dictionary):
         for key, value in dictionary.items():
             students.write(f'{key} {value}\n')
 
+
 # Перезаписываем файл
 file_writer('students.txt', new_students_dict(file_reader('students.txt')))
 
