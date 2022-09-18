@@ -29,3 +29,4 @@ def decoded_writer(file):
 
 
 encoded_writer('initial text.txt')
+decoded_writer('encrypted_message.txt')

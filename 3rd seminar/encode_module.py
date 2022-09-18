@@ -7,6 +7,9 @@ def encoder(text):
         while i + 1 < len(text) and text[i] == text[i + 1]:
             counter += 1
             i += 1
-        encoded_text += str(counter) + text[i]
+        if counter == 1:
+            encoded_text +=  text[i]
+        else:
+            encoded_text += str(counter) + text[i]
         i += 1
     return encoded_text

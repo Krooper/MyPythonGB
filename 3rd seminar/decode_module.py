@@ -1,17 +1,18 @@
 #  Функция для восстановления
-def decoder(text):
+def decoder(encoded_text):
     decoded_text = ''
-    words_list = text.split()
-    for word in words_list:
-        decoded_word = ''
-
-
-    # i = 0
-    # while i < len(text):
-    #     counter = 1
-    #     while i + 1 < len(text) and text[i] == text[i + 1]:
-    #         counter += 1
-    #         i += 1
-    #     decoded_text += str(counter) + text[i]
-    #     i += 1
-    # return decoded_text
+    i = 0
+    while i < len(encoded_text):
+        counter = ''
+        if encoded_text[i].isdigit():
+            while encoded_text[i].isdigit():
+                counter += str(encoded_text[i])
+                i += 1
+            counter = int(counter)
+            for j in range(counter):
+                decoded_text += encoded_text[i]
+            i += 1
+        else:
+            decoded_text += encoded_text[i]
+            i += 1
+    return decoded_text
