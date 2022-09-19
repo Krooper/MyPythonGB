@@ -5,6 +5,7 @@
 letters = 'абв'
 text = 'абвгдейка - это передача'
 
+# Понимаю, что можно сделать и по-другому, но пытаюсь лишний раз потренироваться в использовании новых для меня функций
 text_list = text.split(' ')
 filtered_words_list = list(filter(lambda word: False if letters in word else True, text_list))
 text = ' '
